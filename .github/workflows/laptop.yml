@@ -46,10 +46,9 @@ jobs:
 
       - name: Push to dockerhub
         uses: redhat-actions/push-to-registry@v2
-        if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
         with:
           username: fwilhe2
           password: ${{ secrets.DH_PAT }}
           image: ${{ env.IMAGE_NAME }}
           registry: ${{ env.REGISTRY }}
-          tags: latest ${{ github.sha }}
+          tags: latest
