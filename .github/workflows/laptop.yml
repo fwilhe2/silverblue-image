@@ -5,6 +5,7 @@ env:
   REGISTRY: "docker.io/fwilhe"
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - main
