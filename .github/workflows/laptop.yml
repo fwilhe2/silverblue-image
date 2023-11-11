@@ -2,7 +2,7 @@ name: "Build a custom Fedora Silverblue image"
 
 env:
   IMAGE_NAME: "laptop"
-  REGISTRY: "docker.io/fwilhe"
+  REGISTRY: "docker.io/fwilhe2"
 
 on:
   workflow_dispatch:
