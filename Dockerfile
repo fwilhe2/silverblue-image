@@ -4,6 +4,7 @@ FROM quay.io/fedora-ostree-desktops/silverblue:39
 LABEL quay.expires-after=8w
 
 RUN rpm-ostree install \
+	keepassxc \
         htop \
         iwd \
         libvirt-daemon \
