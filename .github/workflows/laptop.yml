@@ -2,7 +2,7 @@ name: "Build a custom Fedora Silverblue image"
 
 env:
   IMAGE_NAME: "laptop"
-  REGISTRY: "quay.io/cverna"
+  REGISTRY: "docker.io/fwilhe"
 
 on:
   pull_request:
@@ -43,12 +43,12 @@ jobs:
           layers: false
           oci: true
 
-      - name: Push to Quay.io
+      - name: Push to dockerhub
         uses: redhat-actions/push-to-registry@v2
         if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
         with:
-          username: ${{ secrets.BOT_USERNAME }}
-          password: ${{ secrets.BOT_SECRET }}
+          username: fwilhe2
+          password: ${{ secrets.DH_PAT }}
           image: ${{ env.IMAGE_NAME }}
           registry: ${{ env.REGISTRY }}
           tags: latest ${{ github.sha }}
