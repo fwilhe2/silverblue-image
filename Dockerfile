@@ -25,6 +25,7 @@ RUN rpm-ostree install \
 	krb5-workstation \
 	simple-scan \
 	virt-manager \        
+ 	curl -fsSL "https://github.com/lima-vm/lima/releases/download/v0.18.0/lima-0.18.0-$(uname -s)-$(uname -m).tar.gz" | tar Cxzvm /usr/local \
     && \
     systemctl enable libvirtd.socket && \
     rm -rf /var/lib/unbound/root.key && \
