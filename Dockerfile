@@ -3,7 +3,8 @@ FROM quay.io/fedora-ostree-desktops/silverblue:39
 # Keep container image for ~2 months
 LABEL quay.expires-after=8w
 
-RUN rpm-ostree install \
+RUN date > /timestamp && \
+    rpm-ostree install \
 	keepassxc \
         htop \
         iwd \
