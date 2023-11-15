@@ -4,7 +4,7 @@ FROM quay.io/fedora-ostree-desktops/silverblue:39
 LABEL quay.expires-after=8w
 
 RUN VERSION=$(curl -fsSL https://api.github.com/repos/lima-vm/lima/releases/latest | jq -r .tag_name) && \
-        curl -fsSL "https://github.com/lima-vm/lima/releases/download/${VERSION}/lima-${VERSION:1}-$(uname -s)-$(uname -m).tar.gz" | tar Cxzvm /usr/local && \
+        curl -fsSL "https://github.com/lima-vm/lima/releases/download/${VERSION}/lima-${VERSION:1}-$(uname -s)-$(uname -m).tar.gz" | tar Cxzvm /usr && \
 	rpm-ostree install \
 	keepassxc \
         htop \
